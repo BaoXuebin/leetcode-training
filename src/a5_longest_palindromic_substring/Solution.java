@@ -57,13 +57,21 @@ public class Solution {
     /**
      * TODO: Manacher's Algorithm
      */
+    private String manacher(String s) {
+        String origin = "#";
+        char[] chars = s.toCharArray();
+        for (char c : chars) {
+            origin += (c + "#");
+        }
+        return origin;
+    }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        System.out.println(solution.longestPalindrome("a"));
-        System.out.println(solution.longestPalindrome("babad"));
-        System.out.println(solution.longestPalindrome("cbbd"));
+        System.out.println(solution.manacher("a"));
+        System.out.println(solution.manacher("babad"));
+        System.out.println(solution.manacher("cbbd"));
     }
 
 }
