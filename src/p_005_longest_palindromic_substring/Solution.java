@@ -1,4 +1,4 @@
-package a5_longest_palindromic_substring;
+package p_005_longest_palindromic_substring;
 
 /**
  * 5. Longest Palindromic Substring

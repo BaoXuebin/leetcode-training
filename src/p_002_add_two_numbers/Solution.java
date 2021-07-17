@@ -1,4 +1,4 @@
-package a2_add_two_numbers;
+package p_002_add_two_numbers;
 
 /**
  * 2. Add Two Numbers

@@ -1,4 +1,4 @@
-package a6_zigzag_conversion;
+package p_006_zigzag_conversion;
 
 import java.util.ArrayList;
 import java.util.List;

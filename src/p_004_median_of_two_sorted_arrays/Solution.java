@@ -1,7 +1,4 @@
-package a4_median_of_two_sorted_arrays;
-
-import java.util.ArrayList;
-import java.util.List;
+package p_004_median_of_two_sorted_arrays;
 
 /**
  * 4. Median of Two Sorted Arrays

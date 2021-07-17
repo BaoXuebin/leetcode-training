@@ -1,4 +1,4 @@
-package a3_longest_substring_without_repeating_characters;
+package p_003_longest_substring_without_repeating_characters;
 
 import java.util.*;
 

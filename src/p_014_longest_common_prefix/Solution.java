@@ -1,4 +1,4 @@
-package b4_longest_common_prefix;
+package p_014_longest_common_prefix;
 
 /**
  * 14. Longest Common Prefix
