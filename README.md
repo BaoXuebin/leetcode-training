@@ -2,7 +2,7 @@
 
 Leetcode 题目练习:
 
-**进度:** 11 / 100
+**进度:** 13 / 100
 
 [1. Two Sum](https://leetcode.com/problems/two-sum/)  
 [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)  
@@ -14,4 +14,6 @@ Leetcode 题目练习:
 [18. 4sum](https://leetcode.com/problems/4sum/)    
 [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)    
 [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)    
-[26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)    
+[26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)  
+[27. Remove element](https://leetcode.com/problems/remove-element/)    
+[28. Implement strStr()](https://leetcode.com/problems/implement-strstr/)    
