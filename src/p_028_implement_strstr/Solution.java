@@ -1,5 +1,7 @@
 package p_028_implement_strstr;
 
+import java.util.Objects;
+
 /**
  * @author BaoXuebin
  * @since 2021/10/11
@@ -41,31 +43,78 @@ package p_028_implement_strstr;
 public class Solution {
 
     public static void main(String[] args) {
-        // 这种题目有何意义
         System.out.println(new Solution().strStr("hello", "ll"));
         System.out.println(new Solution().strStr("aaaaa", "bba"));
         System.out.println(new Solution().strStr("", ""));
         System.out.println(new Solution().strStr("1", "11"));
-        System.out.println(new Solution().strStr("mississippi", "issipi"));
+        System.out.println(new Solution().strStr("mississippi", "issip"));
     }
 
     public int strStr(String haystack, String needle) {
-        return haystack.indexOf(needle);
-//        if (needle == null || needle.length() == 0) {
-//            return 0;
-//        }
+        if (needle == null || needle.length() == 0) {
+            return 0;
+        }
 
-//        for (int i = 0, l = haystack.length(); i < l; i++) {
-//            int idx = 0;
-//            while ((i + idx) < l && haystack.charAt(i + idx) == needle.charAt(idx)) {
-//                if (idx == needle.length() - 1) {
-//                    return i;
-//                }
-//                idx ++;
-//            }
-//        }
-//
-//        return -1;
+        int needleLength = needle.length();
+        for (int i = 0, l = haystack.length() - needleLength; i <= l; i++) {
+            String sub = haystack.substring(i, i + needleLength);
+            for (int j = needleLength - 1; j >= 0; j--) {
+                if (sub.charAt(j) != needle.charAt(j)) {
+                    int k = j;
+                    while (k > 0) {
+                        k --;
+                        if (sub.charAt(k) == needle.charAt(k)) {
+                            i += (needleLength - 1 - k);
+                            break;
+                        }
+                    }
+                    break;
+                }
+                if (j == 0) {
+                    return i;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+    private int rk(String haystack, String needle) {
+        if (needle == null || needle.length() == 0) {
+            return 0;
+        }
+
+        int needleHashCode = 0;
+        for (char c : needle.toCharArray()) {
+            needleHashCode += hash(c);
+        }
+
+        int needleLength = needle.length();
+        int subStrHashCode = 0;
+        int hashIdx = 0;
+        for (int i = 0, l = haystack.length() - needleLength; i <= l; i++) {
+            while (hashIdx < i + needleLength) {
+                if (i > 0) {
+                    subStrHashCode -= hash(haystack.charAt(i - 1));
+                }
+                subStrHashCode += hash(haystack.charAt(hashIdx));
+                hashIdx ++;
+            }
+
+            if (subStrHashCode != needleHashCode) {
+                continue;
+            }
+
+            if (Objects.equals(haystack.substring(i, i + needleLength), needle)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private static int hash(char c) {
+        return (int) c;
     }
 
 }
